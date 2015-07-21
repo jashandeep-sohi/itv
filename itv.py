@@ -166,8 +166,13 @@ if __name__ == "__main__":
   )
   media_req_tree = etree.fromstring(media_req.text)
   
-  if not media_req_tree.xpath("boolean(//ProgrammeTitle)"):
-    arg_parser.error("media request failed")
+  if media_req_tree.xpath("boolean(//Fault)"):
+    arg_parser.error(
+      "{:}; {}".format(
+        media_req_tree.xpath("//faultcode/text()")[0],
+        media_req_tree.xpath("//faultstring/text()")[0]
+      )
+    )
   
   title = media_req_tree.xpath("//ProgrammeTitle/text()")[0]
   ep_title = media_req_tree.xpath("//EpisodeTitle/text()")[0]
