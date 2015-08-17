@@ -220,3 +220,5 @@ if __name__ == "__main__":
     proc.communicate()
   except KeyboardInterrupt:
     pass
+  finally:
+    arg_parser.exit(proc.wait())
