@@ -2,7 +2,7 @@
 
 itv
 ===
-Download ITV Player (www.itv.com/itvplayer) programmes.
+Download ITV Player (``www.itv.com/itvplayer``) programmes.
 
 Dependencies
 ------------
