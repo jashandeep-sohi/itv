@@ -102,10 +102,10 @@ if __name__ == "__main__":
   })
   
   page_req = session.get(args.url)
-  pid_match = re.search('"productionId":"(.*?)"', page_req.text)
+  pid_match = re.search("""data-video-id\s*=\s*["'](.*?)["']""", page_req.text)
   
   try:
-    pid = pid_match.group(1).replace("\\", "")
+    pid = pid_match.group(1)
   except:
     arg_parser.error("could not parse video pid from page")
   
