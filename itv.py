@@ -22,7 +22,7 @@
 Download ITV Player (www.itv.com/itvplayer) programmes.
 """
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 import argparse
 from lxml import etree
