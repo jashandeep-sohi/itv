@@ -102,7 +102,7 @@ if __name__ == "__main__":
   })
   
   page_req = session.get(args.url)
-  pid_match = re.search("""data-video-id\s*=\s*["'](.*?)["']""", page_req.text)
+  pid_match = re.search("""data-video-autoplay-id\s*=\s*["'](.*?)["']""", page_req.text)
   
   try:
     pid = pid_match.group(1)
